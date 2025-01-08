@@ -10,7 +10,7 @@ namespace TaskTrackerCLI
 
             if (args.Length == 0)
             {
-                Console.WriteLine("Usage: task-cli [command] [options]");
+                Console.WriteLine("Usage: dotnet run [command] [options]");
                 return;
             }
 
@@ -21,7 +21,7 @@ namespace TaskTrackerCLI
                 case "add":
                     if (args.Length < 2)
                     {
-                        Console.WriteLine("Usage: task-cli add [description]");
+                        Console.WriteLine("Usage: dotnet run add [description]");
                     }
                     else
                     {
@@ -33,7 +33,7 @@ namespace TaskTrackerCLI
                 case "update":
                     if (args.Length < 3 || !int.TryParse(args[1], out int updateId))
                     {
-                        Console.WriteLine("Usage: task-cli update [id] [description]");
+                        Console.WriteLine("Usage: dotnet run update [id] [description]");
                     }
                     else
                     {
@@ -45,7 +45,7 @@ namespace TaskTrackerCLI
                 case "delete":
                     if (args.Length < 2 || !int.TryParse(args[1], out int deleteId))
                     {
-                        Console.WriteLine("Usage: task-cli delete [id]");
+                        Console.WriteLine("Usage: dotnet run delete [id]");
                     }
                     else
                     {
@@ -57,7 +57,7 @@ namespace TaskTrackerCLI
                 case "mark-done":
                     if (args.Length < 2 || !int.TryParse(args[1], out int markId))
                     {
-                        Console.WriteLine($"Usage: task-cli {command} [id]");
+                        Console.WriteLine($"Usage: dotnet run{command} [id]");
                     }
                     else
                     {

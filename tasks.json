@@ -5,5 +5,12 @@
     "Status": "todo",
     "CreatedAt": "2025-01-02T15:13:42.5013749+07:00",
     "UpdatedAt": "2025-01-02T15:13:42.5023105+07:00"
+  },
+  {
+    "Id": 2,
+    "Description": "Belajar ASP NET",
+    "Status": "todo",
+    "CreatedAt": "2025-01-08T11:37:37.1982821+07:00",
+    "UpdatedAt": "2025-01-08T11:37:37.1982831+07:00"
   }
 ]
