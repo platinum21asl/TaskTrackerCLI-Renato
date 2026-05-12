@@ -1,62 +1,73 @@
-# Task Tracker CLI
+﻿# 🚀 Task Tracker CLI - Enterprise Edition
 
-Task Tracker CLI adalah aplikasi berbasis command line yang digunakan untuk mengelola daftar tugas. Aplikasi ini memungkinkan Anda menambahkan, memperbarui, menghapus, menandai status, dan menampilkan tugas yang disimpan dalam file JSON.
-Aplikasi ini dibuat menggunakan bahasa pemograman c#.
-## Fitur
+**Task Tracker CLI** is a terminal-based task management application built with modern software development standards. This project is not just a basic CRUD tool, but a demonstration of implementing **Clean Architecture**, **Dependency Injection**, and **Automated Testing** within the .NET ecosystem.
 
-- **Menambahkan tugas baru:** Tambahkan tugas dengan deskripsi yang diberikan.
-- **Memperbarui tugas:** Perbarui deskripsi tugas berdasarkan ID.
-- **Menghapus tugas:** Hapus tugas berdasarkan ID.
-- **Menandai tugas:** Tandai tugas sebagai `todo`, `in-progress`, atau `done`.
-- **Menampilkan tugas:** Lihat semua tugas atau filter berdasarkan status.
-- **Menyimpan data dalam file JSON:** Semua data tugas disimpan dalam file `tasks.json`.
+---
 
-## Struktur Data Tugas
+## ✨ Key Features
 
-Setiap tugas memiliki properti berikut:
-- **id:** ID unik untuk tugas.
-- **description:** Deskripsi tugas.
-- **status:** Status tugas (`todo`, `in-progress`, atau `done`).
-- **createdAt:** Waktu saat tugas dibuat.
-- **updatedAt:** Waktu saat tugas terakhir diperbarui.
+- ✅ **Comprehensive Task Management**: Easily Add, Edit, Delete, and Filter tasks.
+- 🎨 **Rich Terminal UI**: Utilizes `Spectre.Console` for elegant and colorful table displays.
+- 🛠️ **Robust Argument Parsing**: Powered by `System.CommandLine` for input validation and automatic help menus.
+- 💾 **Data Persistence**: Automatic storage using a structured JSON format.
+- 🧪 **Test-Driven Design**: Business logic is fully tested using Unit Testing to ensure stability.
 
-## Cara Menggunakan
+---
 
-### 1. Clone Repository
-Clone repository ini ke komputer Anda
+## 🏗️ Architecture & Design Patterns
 
+This application is designed using the **Separation of Concerns** principle to ensure the code is maintainable and scalable:
 
-### 2. Jalankan Aplikasi
-dotnet run [command] [options]
+1.  **Domain Model**: Pure data representation (`TaskItem`).
+2.  **Repository Pattern**: Data access abstraction using `ITaskRepository`. This allows switching storage media (e.g., from JSON to SQL) without modifying the core business logic.
+3.  **Service Layer**: The core of the business logic (`TaskService`), isolated from the UI and Database.
+4.  **Dependency Injection (DI)**: Uses `Microsoft.Extensions.DependencyInjection` to manage object lifecycles and increase code flexibility.
 
-### 3. Perintah CLI
-add [description]
-update [id] [description]
-delete [id]
-mark-in-progress [id]
-mark-done [id]
-list
-list [status]
+---
 
-## File JSON
-Semua data tugas disimpan dalam file tasks.json di direktori kerja. File ini akan dibuat secara otomatis jika belum ada.
-[
-  {
-    "id": 1,
-    "description": "Belajar ASP.NET Core",
-    "status": "todo",
-    "createdAt": "2025-01-02T10:00:00",
-    "updatedAt": "2025-01-02T10:00:00"
-  }
-]
+## 🛠️ Tech Stack
 
-## Contoh Penggunaan
-### Menambahkan Tugas Baru
-dotnet run add "Belajar ASP.NET Core"
+- **Language**: C#
+- **Framework**: .NET 8.0
+- **CLI Framework**: System.CommandLine (Beta 4)
+- **UI Library**: Spectre.Console
+- **Unit Testing**: xUnit
+- **Mocking**: Moq
 
-### Memperbarui Tugas
-dotnet run update 1 "Belajar ASP.NET Core dan CLI"
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+
+### Installation & Running
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/platinum21asl/TaskTrackerCLI-Renato.git](https://github.com/platinum21asl/TaskTrackerCLI-Renato.git)
+   cd TaskTrackerCLI-Renato
+2. Restore the packages:
+	```bash
+	dotnet restore
+3. Run the application:
+	```bash
+	dotnet run -- --help
 
 
-# Project URL
-https://roadmap.sh/projects/task-tracker
+## 💻 Usage
+Command,Description,Example
+add,Add a new task,"dotnet run add ""Learn Clean Architecture"""
+list,Display all tasks,dotnet run list
+list --status,Filter tasks by status,dotnet run list --status todo
+update,Update task description,"dotnet run update 1 ""New Description"""
+delete,Delete a task,dotnet run delete 1
+mark-done,Mark a task as done,dotnet run mark-done 1
+
+## Testing
+This project includes an automated testing suite to ensure functionality works correctly. The tests utilize Mocking techniques to avoid mutating the actual data files.
+	```bash
+	cd TaskTracker.Tests
+	dotnet test
+
+
+*Last Updated: May 2026*

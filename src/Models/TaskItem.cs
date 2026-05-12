@@ -1,6 +1,6 @@
 using System;
 
-namespace TaskTrackerCLI
+namespace TaskTrackerCLI_Renato.Models
 {
     public class TaskItem
     {
