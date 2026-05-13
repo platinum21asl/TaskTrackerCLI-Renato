@@ -51,24 +51,24 @@ This application is designed using the **Separation of Concerns** principle to e
 	dotnet restore
 3. Run the application:
 	```bash
-	dotnet run -- --help
+	dotnet run --help
 
 
 ## 💻 Usage
 
 | Command        | Description                     | Example                                               |
 |----------------|---------------------------------|-------------------------------------------------------|
-| `add`          | Add a new task                  | `dotnet run add "Learn Clean Architecture"`           |
-| `list`         | Display all tasks               | `dotnet run list`                                     |
-| `list --status`| Filter tasks by status          | `dotnet run list --status todo`                       |
-| `update`       | Update task description         | `dotnet run update 1 "New Description"`               |
-| `delete`       | Delete a task                   | `dotnet run delete 1`                                 |
-| `mark-done`    | Mark a task as done             | `dotnet run mark-done 1`                              |
+| `add`          | Add a new task                  | `dotnet run --project src add "Learn Clean Architecture"`           |
+| `list`         | Display all tasks               | `dotnet run --project src list`                                     |
+| `list --status`| Filter tasks by status          | `dotnet run --project src list --status todo`                       |
+| `update`       | Update task description         | `dotnet run --project src update 1 "New Description"`               |
+| `delete`       | Delete a task                   | `dotnet run --project src delete 1`                                 |
+| `mark-done`    | Mark a task as done             | `dotnet run --project src mark-done 1`                              |
 
 ## Testing
 This project includes an automated testing suite to ensure functionality works correctly. The tests utilize Mocking techniques to avoid mutating the actual data files.
 	```bash
-	cd TaskTracker.Tests
+	cd test/TaskTracker.Tests
 	dotnet test
 
 
